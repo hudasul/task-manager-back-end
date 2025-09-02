@@ -46,9 +46,21 @@ async function showTask(req,res) {
     
 }
 
+async function updateTask(req,res) {
+    try {
+    const updatedTask = await Task.findByIdAndUpdate(req.params.id, req.body, {
+      new: true,
+    });
+    res.status(200).json(updatedTask);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+    
+}
 
 module.exports ={
     creatTask,
     showAllTasks,
-    showTask
+    showTask,
+    updateTask
 }
