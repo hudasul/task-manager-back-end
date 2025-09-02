@@ -35,7 +35,7 @@ async function showProject(req,res) {
 
 async function showAllProjects(req,res) {
     try {
-    const allProjects = await project.find();
+    const allProjects = await project.find({creator : req.user.id});
     if (allProjects.length) {
       res.status(200).json(allProjects);
     } else {
