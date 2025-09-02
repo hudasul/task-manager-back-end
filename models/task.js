@@ -22,11 +22,15 @@ const taskSchema = new Schema({
     type: Boolean,
     required: true,
   },
+  creator: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "User",
+  },
   projectId: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "project",
   },
 });
 
-const Task = model("Task", taskSchema)
-module.exports = Task
+const Task = model("Task", taskSchema);
+module.exports = Task;

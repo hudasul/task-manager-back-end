@@ -6,7 +6,7 @@ const cors = require("cors");
 
 const authRoutes = require("./routes/authRoutes")
 const projectRoutes = require("./routes/projectRoutes")
-
+const taskRoutes = require("./routes/taskRoutes")
 
 dotenv.config();
 const app = express();
@@ -23,6 +23,7 @@ app.use(logger("dev"));
 
 app.use("/auth", authRoutes);
 app.use("/project", projectRoutes)
+app.use("/task", taskRoutes)
 
 app.listen(3000, () => {
   console.log("App is listening!");

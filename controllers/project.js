@@ -75,7 +75,8 @@ async function addTaskToProject(req,res) {
       description: req.body.description,
       date: req.body.date,
       status: req.body.status,
-      importance:req.body.importance ,
+      importance:req.body.importance,
+      creator: req.user.id,
       projectId: req.params.id
     });
 
