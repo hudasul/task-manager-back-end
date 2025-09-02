@@ -6,6 +6,7 @@ const taskControllers = require("../controllers/task")
 
 
 router.post('/new', secureRoute, taskControllers.creatTask)
+router.get('/', secureRoute, taskControllers.showAllTasks)
 
 
 
