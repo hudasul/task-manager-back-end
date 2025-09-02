@@ -32,8 +32,23 @@ async function showAllTasks(req,res) {
     
 }
 
+async function showTask(req,res) {
+    try {
+    const foundTask = await Task.findById(req.params.id);
+    if (foundTask) {
+      res.status(200).json(foundTask);
+    } else {
+      res.sendStatus(404);
+    }
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+    
+}
+
 
 module.exports ={
     creatTask,
-    showAllTasks
+    showAllTasks,
+    showTask
 }
