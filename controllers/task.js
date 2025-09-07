@@ -20,7 +20,7 @@ async function creatTask(req, res) {
 
 async function showAllTasks(req,res) {
     try {
-    const allTasks = await Task.find({ projectId: null , creator : req.user.id })
+    const allTasks = await Task.find({ projectId: null  })
     if (allTasks.length) {
       res.status(200).json(allTasks);
     } else {
