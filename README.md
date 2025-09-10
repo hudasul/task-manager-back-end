@@ -24,6 +24,11 @@ This is the back end of the Task Manger Applicationand it is build using Node.js
     <td>/auth/login</td>
     <td>Log in </td>
   </tr>
+  <tr>
+    <td>PUT</td>
+    <td>/auth/updatePassword</td>
+    <td>Update Logged in user password</td>
+  </tr>
 </table>
 <br>
 
